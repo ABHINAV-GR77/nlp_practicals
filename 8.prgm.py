@@ -15,7 +15,7 @@ if language not in supported_languages:
     print("Invalid language!")
 else:
     stemmer = snowballstemmer.stemmer(language)
-    text = input("Enter text to stem: ").strip()
+    text = input("Enter text to stem: ").strip(  )
     words = text.split()
     stemmed_words = stemmer.stemWords(words)
     print("\nOriginal Words:", words)
