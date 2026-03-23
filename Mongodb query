@@ -1,0 +1,18 @@
+db.restaurant.find(
+  { "Name": /^Wil/i },
+  { "resid": 1, "Name": 1, "Borough": 1, "Cuisine": 1, "_id": 0 }
+).pretty()
+
+db.students.aggregate([
+  {
+    $group: {
+      _id: null,
+      totalmarks: { $sum: "$marks" },
+      averagemarks: { $avg: "$marks" }
+    }
+  }
+])
+
+db.student.find({}, { _id: 0, name: 1, rollno: 1 }).sort({ name: -1 })
+
+db.student.find({ score: { $gt: 80, $lt: 100 } }).pretty()
